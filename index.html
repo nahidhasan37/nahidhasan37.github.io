@@ -3,156 +3,502 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Md. Nahid Hasan — Portfolio</title>
-    <meta name="description" content="Portfolio / Resume of Md. Nahid Hasan" />
+    <title>Md. Nahid Hasan | Professional Portfolio</title>
+    <meta name="description" content="Professional portfolio and resume of Md. Nahid Hasan" />
     <style>
-      :root{--accent:#111827;--muted:#6b7280;--card:#ffffff}
-      body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#f3f4f6; margin:0; padding:2rem; color:#111}
-      .container{max-width:1000px;margin:0 auto;background:var(--card);box-shadow:0 6px 20px rgba(16,24,40,0.08);display:flex;gap:2rem;padding:2rem;border-radius:8px}
-      .left{width:320px}
-      .right{flex:1}
-      .profile-pic{width:180px;height:180px;object-fit:cover;border-radius:6px;border:6px solid #fff;box-shadow:0 4px 14px rgba(16,24,40,0.08)}
-      h1{margin:0;font-size:1.75rem}
-      h2{margin:0;font-size:1rem;color:var(--accent)}
-      .section{margin-top:1.25rem}
-      .muted{color:var(--muted);font-size:0.95rem}
-      .contact-list{list-style:none;padding:0;margin:0}
-      .contact-list li{display:flex;gap:0.6rem;align-items:flex-start;padding:0.35rem 0}
-      .contact-label{font-weight:600;min-width:22px}
-      .skill-list{list-style:disc;padding-left:1.2rem;margin:0}
-      .projects, .experience{list-style:disc;padding-left:1.2rem;margin:0}
-      a.button{display:inline-block;padding:0.45rem 0.7rem;background:#0366d6;color:white;border-radius:6px;text-decoration:none}
-      footer{margin-top:1.6rem;color:var(--muted);font-size:0.9rem}
-      @media (max-width:880px){.container{flex-direction:column}.left{width:100%;display:flex;gap:1rem}}
-      .label{font-weight:700;margin-bottom:0.35rem}
-      .divider{height:1px;background:linear-gradient(90deg,#e6e6e6,#f3f4f6);margin:0.75rem 0}
+      :root {
+        --bg: #eef3f8;
+        --panel: #ffffff;
+        --panel-alt: #f8fafc;
+        --accent: #0f172a;
+        --muted: #64748b;
+        --primary: #0f6fff;
+        --primary-soft: rgba(15, 111, 255, 0.1);
+        --border: #e2e8f0;
+        --success: #0b8a61;
+        --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--accent); }
+      body { min-height: 100vh; }
+      a { color: var(--primary); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .page {
+        max-width: 1180px;
+        margin: 36px auto;
+        padding: 20px;
+      }
+
+      .resume {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+        border-radius: 18px;
+        overflow: hidden;
+      }
+
+      .sidebar {
+        background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+        color: #e5eefb;
+        padding: 28px 24px;
+      }
+
+      .profile-box {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .avatar {
+        width: 96px;
+        height: 96px;
+        border-radius: 16px;
+        object-fit: cover;
+        border: 3px solid rgba(255,255,255,0.22);
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+      }
+
+      .profile-box h1 {
+        margin: 0;
+        font-size: 1.15rem;
+        letter-spacing: 0.02em;
+      }
+
+      .profile-box p {
+        margin: 6px 0 0 0;
+        font-size: 0.76rem;
+        color: #c5d4ee;
+      }
+
+      .sidebar-section { margin-top: 24px; }
+      .sidebar-section h3 {
+        margin: 0 0 12px;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #d6e7ff;
+      }
+
+      .list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 10px 0;
+        color: #d9e8ff;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .badge {
+        display: inline-block;
+        font-size: 0.74rem;
+        background: rgba(255,255,255,0.08);
+        color: #ebf3ff;
+        border: 1px solid rgba(255,255,255,0.14);
+        padding: 6px 8px;
+        border-radius: 999px;
+        margin: 4px 6px 4px 0;
+      }
+
+      .main {
+        background: var(--panel);
+        padding: 32px 34px 24px;
+      }
+
+      .headline {
+        margin-bottom: 22px;
+      }
+
+      .headline h2 {
+        margin: 0;
+        font-size: 1.9rem;
+        letter-spacing: -0.04em;
+      }
+
+      .headline .role {
+        margin-top: 8px;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .summary {
+        margin: 18px 0 24px;
+        padding: 18px 20px;
+        background: var(--panel-alt);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--primary);
+        border-radius: 10px;
+        line-height: 1.7;
+        color: #384150;
+      }
+
+      .section {
+        margin-top: 26px;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+
+      .section-header h3 {
+        margin: 0;
+        font-size: 1.06rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .divider {
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(90deg, var(--border), rgba(226,232,240,0));
+        margin-top: 10px;
+      }
+
+      .experience-item,
+      .project-item,
+      .edu-item {
+        margin-top: 16px;
+        padding: 14px 16px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: rgba(248, 250, 252, 0.7);
+      }
+
+      .job-top,
+      .project-top,
+      .edu-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .job-top h4,
+      .project-top h4,
+      .edu-top h4 {
+        margin: 0;
+        font-size: 1.02rem;
+        color: var(--accent);
+      }
+
+      .duration {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
+      .meta {
+        margin-top: 6px;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      ul.check-list {
+        margin: 12px 0 0 18px;
+        padding: 0;
+        color: #445063;
+        line-height: 1.7;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px 14px;
+      }
+
+      .skill-box {
+        background: var(--panel-alt);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px 14px;
+      }
+
+      .skill-box strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.86rem;
+        color: var(--accent);
+      }
+
+      .skill-box span {
+        display: inline-block;
+        background: var(--primary-soft);
+        color: var(--primary);
+        padding: 5px 8px;
+        border-radius: 999px;
+        margin: 4px 4px 0 0;
+        font-size: 0.74rem;
+        font-weight: 600;
+      }
+
+      .contact-strip {
+        margin-top: 28px;
+        padding: 14px 18px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #f8fbff, #edf4ff);
+        border: 1px solid #dfeaff;
+      }
+
+      .contact-strip a {
+        font-weight: 600;
+      }
+
+      @media (max-width: 900px) {
+        .resume { grid-template-columns: 1fr; }
+        .main { padding: 22px 20px 28px; }
+      }
+
+      @media (max-width: 560px) {
+        .page { padding: 14px; }
+        .skills-grid { grid-template-columns: 1fr; }
+        .headline h2 { font-size: 1.45rem; }
+        .profile-box { align-items: flex-start; }
+      }
     </style>
   </head>
   <body>
-    <div class="container" role="main">
-      <aside class="left">
-        <div style="display:flex;gap:1rem;align-items:center">
-          <img class="profile-pic" src="https://github.com/nahidhasan37.png" alt="Md. Nahid Hasan">
-          <div>
-            <h1>Md. Nahid Hasan</h1>
-            <div class="muted">Student of Computer Science & Engineering</div>
+    <div class="page">
+      <div class="resume" role="main">
+        <aside class="sidebar">
+          <div class="profile-box">
+            <img class="avatar" src="https://github.com/nahidhasan37.png" alt="Md. Nahid Hasan" />
+            <div>
+              <h1>Md. Nahid Hasan</h1>
+              <p>Software Engineer</p>
+            </div>
           </div>
-        </div>
 
-        <div class="section">
-          <div class="label">Contact</div>
-          <ul class="contact-list">
-            <li><span class="contact-label">📍</span><div>House no: 1, Block C, Kaderabad Housing, Mohammadpur, Dhaka.</div></li>
-            <li><span class="contact-label">📞</span><div><a href="tel:+8801731294440">+8801731294440</a></div></li>
-            <li><span class="contact-label">✉️</span><div><a href="mailto:Nahidhasan112421@gmail.com">Nahidhasan112421@gmail.com</a></div></li>
-            <li><span class="contact-label">🐙</span><div><a href="https://github.com/nahidhasan37" target="_blank" rel="noopener">github.com/nahidhasan37</a></div></li>
-            <li><span class="contact-label">in</span><div><a href="https://linkedin.com/in/md-nahid-3b8618a9" target="_blank" rel="noopener">linkedin.com/in/md-nahid-3b8618a9</a></div></li>
-          </ul>
-        </div>
+          <section class="sidebar-section">
+            <h3>Contact</h3>
+            <ul class="list">
+              <li><span>📍</span><div>Dhaka, Bangladesh</div></li>
+              <li><span>📞</span><div><a href="tel:+8801731294440" style="color:#dcecff;">+8801731294440</a></div></li>
+              <li><span>✉️</span><div><a href="mailto:Nahidhasan112421@gmail.com" style="color:#dcecff;">Nahidhasan112421@gmail.com</a></div></li>
+              <li><span>🐙</span><div><a href="https://github.com/nahidhasan37" target="_blank" rel="noopener" style="color:#dcecff;">github.com/nahidhasan37</a></div></li>
+              <li><span>in</span><div><a href="https://linkedin.com/in/md-nahid-3b8618a9" target="_blank" rel="noopener" style="color:#dcecff;">linkedin.com/in/md-nahid-3b8618a9</a></div></li>
+            </ul>
+          </section>
 
-        <div class="section">
-          <div class="label">Technical Skills</div>
-          <div class="muted">Programming Languages</div>
-          <ul class="skill-list">
-            <li>C, C++, Java, PHP, C#, Python</li>
-          </ul>
-          <div class="muted" style="margin-top:0.5rem">Frameworks</div>
-          <ul class="skill-list">
-            <li>Laravel, CakePHP, CodeIgniter, React</li>
-          </ul>
-          <div class="muted" style="margin-top:0.5rem">Web & Databases</div>
-          <ul class="skill-list">
-            <li>HTML, CSS, JavaScript, Bootstrap</li>
-            <li>MySQL, MSSQL, PostgreSQL, MongoDB</li>
-          </ul>
-        </div>
+          <section class="sidebar-section">
+            <h3>Core Skills</h3>
+            <div>
+              <span class="badge">PHP</span>
+              <span class="badge">Laravel</span>
+              <span class="badge">CakePHP</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">React</span>
+              <span class="badge">MySQL</span>
+              <span class="badge">MSSQL</span>
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">MongoDB</span>
+              <span class="badge">REST APIs</span>
+              <span class="badge">ERP</span>
+              <span class="badge">CRM</span>
+            </div>
+          </section>
 
-        <div class="section">
-          <div class="label">Interests</div>
-          <ul class="skill-list">
-            <li>Programming</li>
-            <li>Travelling</li>
-          </ul>
-        </div>
+          <section class="sidebar-section">
+            <h3>Languages</h3>
+            <ul class="list">
+              <li><span>🌐</span><div>English (Professional)</div></li>
+              <li><span>🗣️</span><div>Bengali (Native)</div></li>
+            </ul>
+          </section>
 
-        <footer>
-          Built with ❤️ — <a href="https://github.com/nahidhasan37/nahidhasan.github.io" target="_blank" rel="noopener">GitHub repo</a>
-        </footer>
-      </aside>
+          <section class="sidebar-section">
+            <h3>Interests</h3>
+            <ul class="list">
+              <li><span>•</span><div>Software Architecture</div></li>
+              <li><span>•</span><div>System Optimization</div></li>
+              <li><span>•</span><div>Research & Innovation</div></li>
+            </ul>
+          </section>
+        </aside>
 
-      <section class="right">
-        <div>
-          <h2>Objective</h2>
-          <div class="divider"></div>
-          <p>
-            This is Md. Nahid Hasan. Student of Computer Science & Engineering (CSE). Looking for a challenging work which will demand the best of my ability such as creativity, talent, enthusiasm in terms of system support technical & analytical skills vice versa enhancing my career & knowledge also.
-          </p>
-        </div>
+        <main class="main">
+          <div class="headline">
+            <h2>Md. Nahid Hasan</h2>
+            <div class="role">Software Engineer • Full-Stack & Backend Developer</div>
+          </div>
 
-        <div class="section">
-          <h2>Academic Credentials</h2>
-          <div class="divider"></div>
-          <h3 style="margin:0.4rem 0 0 0">Bachelor of Science</h3>
-          <ul class="skill-list">
-            <li>Department – Computer Science & Engineering (CSE)</li>
-            <li>University – North South University</li>
-            <li>Year – 2016 – 2021</li>
-            <li>CGPA – (3.10 out of 4)</li>
-          </ul>
+          <div class="summary">
+            Software engineer with a strong foundation in PHP, Laravel, CakePHP, and modern web application development. Experienced in designing and delivering ERP, CRM, sales automation, and inventory systems, with a focus on scalable backend architecture, clean code, and business-driven solutions. Passionate about building impactful digital products and continuously improving technical skills.
+          </div>
 
-          <h3 style="margin:0.6rem 0 0 0">Higher Secondary School Certificate</h3>
-          <ul class="skill-list">
-            <li>Meherpur Government College</li>
-            <li>Passing year: 2015</li>
-          </ul>
+          <section class="section">
+            <div class="section-header">
+              <h3>Experience</h3>
+            </div>
+            <div class="divider"></div>
 
-          <h3 style="margin:0.6rem 0 0 0">Secondary School Certificate</h3>
-          <ul class="skill-list">
-            <li>Meherpur Government High School</li>
-            <li>Passing year: 2013</li>
-          </ul>
-        </div>
+            <div class="experience-item">
+              <div class="job-top">
+                <h4>Software Engineer</h4>
+                <div class="duration">2023 — Present</div>
+              </div>
+              <div class="meta">Arena Phone BD Limited</div>
+              <ul class="check-list">
+                <li>Developed and maintained ERP, CRM, and sales automation systems using PHP, CakePHP, and Laravel.</li>
+                <li>Built scalable modules for inventory management, business workflows, and reporting features.</li>
+                <li>Worked with MySQL and MSSQL databases to optimize query performance and support production features.</li>
+                <li>Collaborated with stakeholders to transform business requirements into reliable software solutions.</li>
+              </ul>
+            </div>
 
-        <div class="section">
-          <h2>Projects & Thesis</h2>
-          <div class="divider"></div>
-          <ul class="projects">
-            <li>SMC Salesforce (CakePHP) — Currently Working</li>
-            <li>An Online Grocery Shop (AjkerBazar) — (Raw PHP)</li>
-            <li>Rajshahi Cantonment Public School & College (WordPress Site)</li>
-            <li>Online Medicine Shop (PHARMA AID) app</li>
-            <li>POS and Inventory Management System (PHP, MySQL)</li>
-            <li>Doctor Appointment Management System (Laravel)</li>
-            <li>CRM Software (Laravel)</li>
-            <li>Lunch Management System (Python + NextJs) — Currently Working</li>
-            <li>Travel Agency System (web)</li>
-            <li>Inventory Management System (React + Laravel)</li>
-          </ul>
-        </div>
+            <div class="experience-item">
+              <div class="job-top">
+                <h4>Research Assistant / Self-employed</h4>
+                <div class="duration">2021 — 2022</div>
+              </div>
+              <div class="meta">Academic & Technical Research</div>
+              <ul class="check-list">
+                <li>Conducted literature reviews, comparative analysis, and technical documentation for academic projects.</li>
+                <li>Assisted with research-driven implementation planning and software exploration.</li>
+              </ul>
+            </div>
+          </section>
 
-        <div class="section">
-          <h2>Experience</h2>
-          <div class="divider"></div>
-          <h3 style="margin:0.4rem 0 0 0">Self-Employed | Research Assistant (2021 – 2022)</h3>
-          <ul class="projects">
-            <li>Conducted literature reviews, related work analysis, and technical documentation for academic research projects.</li>
-          </ul>
+          <section class="section">
+            <div class="section-header">
+              <h3>Selected Projects</h3>
+            </div>
+            <div class="divider"></div>
 
-          <h3 style="margin:0.6rem 0 0 0">Software Engineer | Arena Phone BD Limited (2023 – Present)</h3>
-          <ul class="projects">
-            <li>Developed and maintained ERP, CRM, and Sales Automation systems using PHP (CakePHP/Laravel), MSSQL and MySQL.</li>
-            <li>Created and optimized inventory management modules.</li>
-          </ul>
-        </div>
+            <div class="project-item">
+              <div class="project-top">
+                <h4>SMC Salesforce</h4>
+                <div class="duration">CakePHP</div>
+              </div>
+              <div class="meta">Sales automation and business workflow platform</div>
+            </div>
 
-        <div class="section">
-          <h2>Research & Certificates</h2>
-          <div class="divider"></div>
-          <p class="muted">Research paper: https://doi.org/10.1109/ICIT54785.2021.9689886</p>
-          <p class="muted">Certificates: Azure Networking, IELTS (Overall Score: 6.5)</p>
-        </div>
+            <div class="project-item">
+              <div class="project-top">
+                <h4>Lunch Management System</h4>
+                <div class="duration">Python + Next.js</div>
+              </div>
+              <div class="meta">Operational system for managing meal logistics and administration</div>
+            </div>
 
-      </section>
+            <div class="project-item">
+              <div class="project-top">
+                <h4>Inventory Management System</h4>
+                <div class="duration">React + Laravel</div>
+              </div>
+              <div class="meta">Solution for product tracking, stock updates, and workflow management</div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-top">
+                <h4>Online Grocery / Pharmacy Platform</h4>
+                <div class="duration">PHP + MySQL</div>
+              </div>
+              <div class="meta">E-commerce and product management application</div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <h3>Education</h3>
+            </div>
+            <div class="divider"></div>
+
+            <div class="edu-item">
+              <div class="edu-top">
+                <h4>B.Sc. in Computer Science & Engineering</h4>
+                <div class="duration">2016 — 2021</div>
+              </div>
+              <div class="meta">North South University</div>
+              <div class="meta">CGPA: 3.10 / 4.00</div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-top">
+                <h4>HSC</h4>
+                <div class="duration">2015</div>
+              </div>
+              <div class="meta">Meherpur Government College</div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <h3>Technical Expertise</h3>
+            </div>
+            <div class="divider"></div>
+
+            <div class="skills-grid">
+              <div class="skill-box">
+                <strong>Languages</strong>
+                <span>PHP</span>
+                <span>JavaScript</span>
+                <span>Python</span>
+                <span>C</span>
+                <span>C++</span>
+                <span>Java</span>
+                <span>C#</span>
+              </div>
+
+              <div class="skill-box">
+                <strong>Frameworks</strong>
+                <span>Laravel</span>
+                <span>CakePHP</span>
+                <span>CodeIgniter</span>
+                <span>React</span>
+                <span>Bootstrap</span>
+              </div>
+
+              <div class="skill-box">
+                <strong>Databases</strong>
+                <span>MySQL</span>
+                <span>MSSQL</span>
+                <span>PostgreSQL</span>
+                <span>MongoDB</span>
+              </div>
+
+              <div class="skill-box">
+                <strong>Additional</strong>
+                <span>Git</span>
+                <span>REST API</span>
+                <span>ERP Systems</span>
+                <span>CRM Systems</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <h3>Research & Certifications</h3>
+            </div>
+            <div class="divider"></div>
+            <ul class="check-list">
+              <li><strong>Research paper:</strong> <a href="https://doi.org/10.1109/ICIT54785.2021.9689886" target="_blank" rel="noopener">IEEE Conference Paper</a></li>
+              <li><strong>Certificates:</strong> Azure Networking, IELTS (Overall Score: 6.5)</li>
+            </ul>
+          </section>
+
+          <div class="contact-strip">
+            Available for software engineering, backend development, and product-focused roles.<br />
+            <a href="mailto:Nahidhasan112421@gmail.com">Email me</a> | <a href="https://github.com/nahidhasan37" target="_blank" rel="noopener">GitHub</a> | <a href="https://linkedin.com/in/md-nahid-3b8618a9" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </main>
+      </div>
     </div>
   </body>
 </html>
