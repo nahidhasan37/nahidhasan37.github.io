@@ -3,25 +3,156 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nahid Hasan — GitHub Pages</title>
-    <meta name="description" content="Personal site for Nahid Hasan" />
+    <title>Md. Nahid Hasan — Portfolio</title>
+    <meta name="description" content="Portfolio / Resume of Md. Nahid Hasan" />
     <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; margin: 0; padding: 2rem; background: #f7f7fb; color: #111; }
-      header { max-width: 720px; margin: 0 auto; }
-      h1 { font-size: 2.25rem; margin: 0 0 0.5rem 0; }
-      p { line-height: 1.6; margin: 0 0 1rem 0; }
-      a.button { display:inline-block; padding:0.5rem 0.75rem; background:#0366d6; color:white; text-decoration:none; border-radius:6px; }
-      footer { margin-top: 2rem; font-size: 0.9rem; color: #555; }
+      :root{--accent:#111827;--muted:#6b7280;--card:#ffffff}
+      body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#f3f4f6; margin:0; padding:2rem; color:#111}
+      .container{max-width:1000px;margin:0 auto;background:var(--card);box-shadow:0 6px 20px rgba(16,24,40,0.08);display:flex;gap:2rem;padding:2rem;border-radius:8px}
+      .left{width:320px}
+      .right{flex:1}
+      .profile-pic{width:180px;height:180px;object-fit:cover;border-radius:6px;border:6px solid #fff;box-shadow:0 4px 14px rgba(16,24,40,0.08)}
+      h1{margin:0;font-size:1.75rem}
+      h2{margin:0;font-size:1rem;color:var(--accent)}
+      .section{margin-top:1.25rem}
+      .muted{color:var(--muted);font-size:0.95rem}
+      .contact-list{list-style:none;padding:0;margin:0}
+      .contact-list li{display:flex;gap:0.6rem;align-items:flex-start;padding:0.35rem 0}
+      .contact-label{font-weight:600;min-width:22px}
+      .skill-list{list-style:disc;padding-left:1.2rem;margin:0}
+      .projects, .experience{list-style:disc;padding-left:1.2rem;margin:0}
+      a.button{display:inline-block;padding:0.45rem 0.7rem;background:#0366d6;color:white;border-radius:6px;text-decoration:none}
+      footer{margin-top:1.6rem;color:var(--muted);font-size:0.9rem}
+      @media (max-width:880px){.container{flex-direction:column}.left{width:100%;display:flex;gap:1rem}}
+      .label{font-weight:700;margin-bottom:0.35rem}
+      .divider{height:1px;background:linear-gradient(90deg,#e6e6e6,#f3f4f6);margin:0.75rem 0}
     </style>
   </head>
   <body>
-    <header>
-      <h1>Nahid Hasan</h1>
-      <p>Welcome to my GitHub Pages site. This is a simple starter index.html — edit this file in the <code>nahidhasan37/nahidhasan.github.io</code> repository to customize your homepage.</p>
-      <p><a class="button" href="https://github.com/nahidhasan37" target="_blank" rel="noopener">View my GitHub profile</a></p>
-      <footer>
-        Built with ❤️ — Hosted on GitHub Pages.
-      </footer>
-    </header>
+    <div class="container" role="main">
+      <aside class="left">
+        <div style="display:flex;gap:1rem;align-items:center">
+          <img class="profile-pic" src="https://github.com/nahidhasan37.png" alt="Md. Nahid Hasan">
+          <div>
+            <h1>Md. Nahid Hasan</h1>
+            <div class="muted">Student of Computer Science & Engineering</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="label">Contact</div>
+          <ul class="contact-list">
+            <li><span class="contact-label">📍</span><div>House no: 1, Block C, Kaderabad Housing, Mohammadpur, Dhaka.</div></li>
+            <li><span class="contact-label">📞</span><div><a href="tel:+8801731294440">+8801731294440</a></div></li>
+            <li><span class="contact-label">✉️</span><div><a href="mailto:Nahidhasan112421@gmail.com">Nahidhasan112421@gmail.com</a></div></li>
+            <li><span class="contact-label">🐙</span><div><a href="https://github.com/nahidhasan37" target="_blank" rel="noopener">github.com/nahidhasan37</a></div></li>
+            <li><span class="contact-label">in</span><div><a href="https://linkedin.com/in/md-nahid-3b8618a9" target="_blank" rel="noopener">linkedin.com/in/md-nahid-3b8618a9</a></div></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <div class="label">Technical Skills</div>
+          <div class="muted">Programming Languages</div>
+          <ul class="skill-list">
+            <li>C, C++, Java, PHP, C#, Python</li>
+          </ul>
+          <div class="muted" style="margin-top:0.5rem">Frameworks</div>
+          <ul class="skill-list">
+            <li>Laravel, CakePHP, CodeIgniter, React</li>
+          </ul>
+          <div class="muted" style="margin-top:0.5rem">Web & Databases</div>
+          <ul class="skill-list">
+            <li>HTML, CSS, JavaScript, Bootstrap</li>
+            <li>MySQL, MSSQL, PostgreSQL, MongoDB</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <div class="label">Interests</div>
+          <ul class="skill-list">
+            <li>Programming</li>
+            <li>Travelling</li>
+          </ul>
+        </div>
+
+        <footer>
+          Built with ❤️ — <a href="https://github.com/nahidhasan37/nahidhasan.github.io" target="_blank" rel="noopener">GitHub repo</a>
+        </footer>
+      </aside>
+
+      <section class="right">
+        <div>
+          <h2>Objective</h2>
+          <div class="divider"></div>
+          <p>
+            This is Md. Nahid Hasan. Student of Computer Science & Engineering (CSE). Looking for a challenging work which will demand the best of my ability such as creativity, talent, enthusiasm in terms of system support technical & analytical skills vice versa enhancing my career & knowledge also.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>Academic Credentials</h2>
+          <div class="divider"></div>
+          <h3 style="margin:0.4rem 0 0 0">Bachelor of Science</h3>
+          <ul class="skill-list">
+            <li>Department – Computer Science & Engineering (CSE)</li>
+            <li>University – North South University</li>
+            <li>Year – 2016 – 2021</li>
+            <li>CGPA – (3.10 out of 4)</li>
+          </ul>
+
+          <h3 style="margin:0.6rem 0 0 0">Higher Secondary School Certificate</h3>
+          <ul class="skill-list">
+            <li>Meherpur Government College</li>
+            <li>Passing year: 2015</li>
+          </ul>
+
+          <h3 style="margin:0.6rem 0 0 0">Secondary School Certificate</h3>
+          <ul class="skill-list">
+            <li>Meherpur Government High School</li>
+            <li>Passing year: 2013</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>Projects & Thesis</h2>
+          <div class="divider"></div>
+          <ul class="projects">
+            <li>SMC Salesforce (CakePHP) — Currently Working</li>
+            <li>An Online Grocery Shop (AjkerBazar) — (Raw PHP)</li>
+            <li>Rajshahi Cantonment Public School & College (WordPress Site)</li>
+            <li>Online Medicine Shop (PHARMA AID) app</li>
+            <li>POS and Inventory Management System (PHP, MySQL)</li>
+            <li>Doctor Appointment Management System (Laravel)</li>
+            <li>CRM Software (Laravel)</li>
+            <li>Lunch Management System (Python + NextJs) — Currently Working</li>
+            <li>Travel Agency System (web)</li>
+            <li>Inventory Management System (React + Laravel)</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>Experience</h2>
+          <div class="divider"></div>
+          <h3 style="margin:0.4rem 0 0 0">Self-Employed | Research Assistant (2021 – 2022)</h3>
+          <ul class="projects">
+            <li>Conducted literature reviews, related work analysis, and technical documentation for academic research projects.</li>
+          </ul>
+
+          <h3 style="margin:0.6rem 0 0 0">Software Engineer | Arena Phone BD Limited (2023 – Present)</h3>
+          <ul class="projects">
+            <li>Developed and maintained ERP, CRM, and Sales Automation systems using PHP (CakePHP/Laravel), MSSQL and MySQL.</li>
+            <li>Created and optimized inventory management modules.</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>Research & Certificates</h2>
+          <div class="divider"></div>
+          <p class="muted">Research paper: https://doi.org/10.1109/ICIT54785.2021.9689886</p>
+          <p class="muted">Certificates: Azure Networking, IELTS (Overall Score: 6.5)</p>
+        </div>
+
+      </section>
+    </div>
   </body>
 </html>
